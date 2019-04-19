@@ -13,8 +13,11 @@ public class Runner {
         System.out.println("Enter a number");
         Integer inputNumber = in.nextInt();
 
-        FizzBuzzService service = new FizzBuzzServiceImpl();
+        MapRepository repository = new FizzBuzzMapRepository();
+        FizzBuzzService service = new FizzBuzzServiceImpl(repository);
         SubmissionController controller = new SubmissionControllerImpl(service);
+
+
 
         controller.submit(inputNumber, userName);
 
