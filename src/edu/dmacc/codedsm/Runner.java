@@ -16,8 +16,8 @@ public class Runner {
         System.out.println("Enter a number");
         Integer inputNumber = in.nextInt();
 
-        MapRepository repository = new FizzBuzzMapRepository();   // change these lines
-        FizzBuzzService service = new FizzBuzzServiceImpl(repository);  //change these lines
+        MapRepository repository = new FizzBuzzMapTwoRepository();   // change these lines
+        FizzBuzzService service = new FizzBuzzServiceTwoImpl(repository);  //change these lines
         SubmissionController controller = new SubmissionControllerImpl(service);
 
         ConsoleInputView view = controller.submit(inputNumber, userName);
@@ -31,7 +31,7 @@ public class Runner {
 
             PrintWriter pw = new PrintWriter("C:/development/Homework18/fizzbuzz_result.txt");
             pw.printf("%s,%s,%s", repository, service, controller);
-            //pw.println("This is my file content");
+            pw.println(controller.submit(inputNumber,userName));
             //pw.println(500);
             pw.close();
             System.out.println("DONE");
