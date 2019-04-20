@@ -1,5 +1,8 @@
 package edu.dmacc.codedsm;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -20,5 +23,20 @@ public class Runner {
         ConsoleInputView view = controller.submit(inputNumber, userName);
         view.render();
 
+
+        try {
+            File file = new File("C:/development/SundayTLW.txt");
+
+            if (!file.exists()) file.createNewFile();
+
+            PrintWriter pw = new PrintWriter("C:/development/Homework18/fizzbuzz_result.txt");
+            pw.printf("%s,%s,%s", repository, service, controller);
+            //pw.println("This is my file content");
+            //pw.println(500);
+            pw.close();
+            System.out.println("DONE");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
