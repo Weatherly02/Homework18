@@ -15,6 +15,7 @@ public class SubmissionControllerImpl implements SubmissionController {
         submission.setUserName(userName);
 
         Result result = service.performFizzBuzzLogic(submission);
+       // Result resultTwo = service.performFizzBuzzLogic(submission);
 
         return new ConsoleInputView(result);
     }

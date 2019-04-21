@@ -2,11 +2,13 @@ package edu.dmacc.codedsm;
 
 import java.util.Map;
 
-public class FizzBuzzServiceTwoImpl implements FizzBuzzService{
+public class FizzBuzzServiceTwoImpl implements FizzBuzzService {
     private MapRepository repository;
+
     public FizzBuzzServiceTwoImpl(MapRepository repository) {
-        this.repository =repository;
+        this.repository = repository;
     }
+
     @Override
     public Result performFizzBuzzLogic(Submission submission) {
         String message = "";

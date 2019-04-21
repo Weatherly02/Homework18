@@ -1,10 +1,14 @@
 package edu.dmacc.codedsm;
 
-import java.io.File;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLOutput;
-import java.util.Scanner;
+
+
+import static javax.swing.UIManager.put;
 
 public class Runner {
     public static void main(String[] args) {
@@ -16,6 +20,8 @@ public class Runner {
         System.out.println("Enter a number");
         Integer inputNumber = in.nextInt();
 
+        // MapRepository repository = new FizzBuzzMapRepository();
+        //FizzBuzzService service = new FizzBuzzServiceImpl(repository);
         MapRepository repository = new FizzBuzzMapTwoRepository();   // change these lines
         FizzBuzzService service = new FizzBuzzServiceTwoImpl(repository);  //change these lines
         SubmissionController controller = new SubmissionControllerImpl(service);
@@ -23,20 +29,30 @@ public class Runner {
         ConsoleInputView view = controller.submit(inputNumber, userName);
         view.render();
 
+            File file = new File("C:/development/Homework18/fizzbuzz_result.txt");
+            if (!file.exists()) ;
 
-        try {
-            File file = new File("C:/development/SundayTLW.txt");
+            try {
+                file.createNewFile();
+            } catch (
+                    IOException e1) {
+                e1.printStackTrace();
+            }
 
-            if (!file.exists()) file.createNewFile();
+            PrintWriter pw = null;
+            try {
+                pw = new PrintWriter(file);
+            } catch (
+                    FileNotFoundException e1) {
+                e1.printStackTrace();
+            }
+           pw.println("result = " + repository.toString());
 
-            PrintWriter pw = new PrintWriter("C:/development/Homework18/fizzbuzz_result.txt");
-            pw.printf("%s,%s,%s", repository, service, controller);
-            pw.println(controller.submit(inputNumber,userName));
-            //pw.println(500);
             pw.close();
             System.out.println("DONE");
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
-}
+
+
+

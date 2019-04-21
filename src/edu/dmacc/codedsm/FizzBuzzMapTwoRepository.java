@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FizzBuzzMapTwoRepository implements MapRepository {
-    private Map<Integer,Result> storage = new HashMap<>();
+    private Map<Integer, Result> storage = new HashMap<>();
 
     @Override
     public String toString() {
@@ -13,9 +13,9 @@ public class FizzBuzzMapTwoRepository implements MapRepository {
                 '}';
     }
 
-    @Override
     public void save(Result result) {
-
-
+        storage.put(1, result);
     }
+
+
 }

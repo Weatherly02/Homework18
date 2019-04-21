@@ -4,8 +4,9 @@ import java.util.Map;
 
 public class FizzBuzzServiceImpl implements FizzBuzzService {
     private MapRepository repository;
+
     public FizzBuzzServiceImpl(MapRepository repository) {
-        this.repository =repository;
+        this.repository = repository;
     }
 
     @Override
@@ -20,7 +21,6 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
         } else {
             message = "Input was not fizzy";
         }
-
 
         Result result = new Result();
         result.setMessage(message);

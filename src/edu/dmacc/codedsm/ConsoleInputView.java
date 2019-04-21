@@ -1,6 +1,6 @@
 package edu.dmacc.codedsm;
 
-public class ConsoleInputView {
+public class ConsoleInputView  implements InputView {
     private Result result;
 
     public ConsoleInputView(Result result) {

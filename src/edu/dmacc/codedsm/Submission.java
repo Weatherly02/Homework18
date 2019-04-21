@@ -1,6 +1,7 @@
 package edu.dmacc.codedsm;
 
 public class Submission {
+
     private Integer inputNumber;
     private String userName;
 
@@ -22,6 +23,9 @@ public class Submission {
 
     @Override
     public String toString() {
-        return "Submission{}";
+        return "Submission{" +
+                "inputNumber=" + inputNumber +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }
