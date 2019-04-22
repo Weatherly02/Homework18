@@ -1,0 +1,1 @@
+result = FizzBuzzMapTwoRepository{storage={1=Result{submission=Submission{inputNumber=28, userName='tammy'}, message='FizzBuzz!'}}}

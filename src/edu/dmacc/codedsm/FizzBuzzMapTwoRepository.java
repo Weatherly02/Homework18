@@ -17,5 +17,4 @@ public class FizzBuzzMapTwoRepository implements MapRepository {
         storage.put(1, result);
     }
 
-
 }

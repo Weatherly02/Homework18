@@ -1,14 +1,10 @@
 package edu.dmacc.codedsm;
 
 import java.io.*;
-import java.util.HashMap;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-
-import static javax.swing.UIManager.put;
 
 public class Runner {
     public static void main(String[] args) {
@@ -22,8 +18,8 @@ public class Runner {
 
         // MapRepository repository = new FizzBuzzMapRepository();
         //FizzBuzzService service = new FizzBuzzServiceImpl(repository);
-        MapRepository repository = new FizzBuzzMapTwoRepository();   // change these lines
-        FizzBuzzService service = new FizzBuzzServiceTwoImpl(repository);  //change these lines
+        MapRepository repository = new FizzBuzzMapTwoRepository();   // changed these lines
+        FizzBuzzService service = new FizzBuzzServiceTwoImpl(repository);  //changed these lines
         SubmissionController controller = new SubmissionControllerImpl(service);
 
         ConsoleInputView view = controller.submit(inputNumber, userName);
